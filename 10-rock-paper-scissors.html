@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Sciccosrs</title>
+  <link rel="stylesheet" href="11-rock-paper-scissors.css">
+</head>
+  <body>
+    <div id="hands-container">
+      <div class="hand rock" onclick="playgame('Rock')">
+        <img src="/RPSimg/rock.jpeg" alt="Rock Hand" />
+      </div>
+      <div class="hand paper" onclick="playgame('Paper')">
+        <img src="/RPSimg/paper.jpeg" alt="Paper Hand" />
+      </div>
+      <div class="hand scissors" onclick="playgame('Scissors')">
+        <img src="/RPSimg/scissors.jpeg" alt="Scissors Hand" />
+      </div>
+    </div>
+    <p>Rock Paper Scissors</p>
+
+
+    <button onclick="
+
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+
+    localStorage.removeItem('score');
+    
+    scoreUpdater();
+
+    document.querySelector('.je-result').innerHTML = '';
+    document.querySelector('.js-moves').innerHTML = '';
+    
+  ">Reset Score</button>
+  <p class="je-result"></p>
+  <p class="js-moves"></p>
+
+    <p class="js-score"></p>
+ 
+
+
+      <script src="10-rock-paper-scissor.js">
+      </script>
+  
+  </body>
+</html>

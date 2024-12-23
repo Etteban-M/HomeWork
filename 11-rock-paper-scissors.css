@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+
+/* Reset default margin and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Acme', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #4CAF50;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+p.js-score {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.je-result {
+  font-size: 1.8rem;
+  margin-top: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.js-moves {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #777;
+}
+
+#hands-container {
+  margin-top: 40px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  width: 100%;
+}
+
+#hands-container div {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#hands-container div:hover {
+  transform: scale(1.1);
+}
+
+#hands-container div img {
+  width: 60px;
+  height: 60px;
+}
+
+#message {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  display: none;
+}
+
+input:checked ~ #message {
+  display: block;
+}
+
+#message p {
+  color: #f44336;
+}
+
+/* Hand animation */
+@keyframes handShake {
+  0%, 100% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+}
+
+@keyframes handShake2 {
+  0%, 100% { transform: rotateY(180deg) rotate(10deg); }
+  50% { transform: rotateY(180deg) rotate(-10deg); }
+}
+
+/* Animation for result text */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Display result with animation */
+.je-result, .js-moves, .js-score {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Specific hand styles (Rock, Paper, Scissors) */
+#hands-container .hand {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#hands-container .hand img {
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animation for when hands "move" */
+#hands-container .hand.rock:hover {
+  transform: scale(1.2) rotate(-20deg);
+}
+
+#hands-container .hand.paper:hover {
+  transform: scale(1.2) rotate(20deg);
+}
+
+#hands-container .hand.scissors:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Styling the buttons (which are images of the hands) */
+#hands-container .hand.rock {
+  background-color: #ffffff;
+}
+
+#hands-container .hand.paper {
+  background-color: #ffffff;
+}
+
+#hands-container .hand.scissors {
+  background-color: #ffffff;
+}
+
+/* Specific hand gestures */
+#hands-container .hand img.rock {
+  content: url('rock-hand.png');
+}
+
+#hands-container .hand img.paper {
+  content: url('paper-hand.png');
+}
+
+#hands-container .hand img.scissors {
+  content: url('scissors-hand.png');
+}
+
+#hands-container .hand img {
+  transition: all 0.3s ease;
+}
+
+#hands-container .hand.rock:hover img {
+  transform: rotate(-10deg);
+}
+
+#hands-container .hand.paper:hover img {
+  transform: rotate(10deg);
+}
+
+#hands-container .hand.scissors:hover img {
+  transform: rotate(5deg);
+}
